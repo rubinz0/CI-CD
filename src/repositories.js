@@ -11,13 +11,13 @@ function memoryRepository() {
       tasks.push(task);
       return { ...task };
     },
-            async complete(id) {
-              const task = tasks.find((t) => t.id === id);
-              if (!task) return null;
-              task.done = true;
-              return { ...task };
-            },
-            async close() {},
+    async complete(id) {
+      const task = tasks.find((t) => t.id === id);
+      if (!task) return null;
+      task.done = true;
+      return { ...task };
+    },
+    async close() {},
   };
 }
 function postgresRepository(connectionString) {
